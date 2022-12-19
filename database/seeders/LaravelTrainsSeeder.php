@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\TrainsModel;
+use Faker\Generator as Faker;
 
 class LaravelTrainsSeeder extends Seeder
 {
@@ -13,7 +14,7 @@ class LaravelTrainsSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
         for ($i = 0; $i < 10; $i++){
             $newTrain = new TrainsModel();
@@ -26,7 +27,7 @@ class LaravelTrainsSeeder extends Seeder
             $newTrain->n_carrozza = $faker->randomDigit();
             $newTrain->in_orario = $faker->boolean();
             $newTrain->cancellato = $faker->boolean();
-
+            dd($newTrain);
 
         }
     }
