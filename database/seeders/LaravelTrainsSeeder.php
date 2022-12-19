@@ -27,6 +27,7 @@ class LaravelTrainsSeeder extends Seeder
             $newTrain->n_carrozza = $faker->randomDigit();
             $newTrain->in_orario = $faker->boolean();
             $newTrain->cancellato = $faker->boolean();
+            $newTrain->data_di_partenza=$faker->date(); 
             // dd($newTrain);
             $newTrain->save();
         }
